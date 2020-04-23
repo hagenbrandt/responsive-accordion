@@ -1,0 +1,27 @@
+{
+  "name": "exercise",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel -d docs --no-cache info.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagenbrandt/exercise.git"
+  },
+  "keywords": [],
+  "author": "Hagen Brandt <hagen-brandt@web.de>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/hagenbrandt/exercise/issues"
+  },
+  "homepage": "https://github.com/hagenbrandt/exercise#readme",
+  "devDependencies": {
+    "sass": "1.26.3"
+  },
+  "dependencies": {
+    "parcel-bundler": "1.12.4"
+  }
+}
