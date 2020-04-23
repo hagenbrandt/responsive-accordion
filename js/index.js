@@ -1,5 +1,5 @@
 import { SPECDT } from './specdt'
-import { accordion } from './accordion'
+import { accordion } from './accordionTab'
 
 let i = 0
 
