@@ -1,5 +1,6 @@
 import { SPECDT } from './specdt'
 import { accordion } from './accordionTab'
+import { calculator } from './calculator'
 
 let i = 0
 
@@ -23,4 +24,11 @@ $.each(SPECDT, function () {
   $('[index=2]').append(`<span>${this.text}</span>`)
 })
 
+$('<section class="calculator"></section>')
+.insertAfter('#spec')
+.append('<input type="number" id="num-of-items" value="1">')
+.append('<button id="calculate">Calculate</button>')
+.append('<span id="price">17.95 €</span>')
+
 accordion()
+calculator()
