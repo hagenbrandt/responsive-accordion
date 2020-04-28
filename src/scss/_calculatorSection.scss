@@ -1,0 +1,30 @@
+.calculator {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;;
+    
+    color: var(--color);
+}
+
+#num-of-items {
+    border-bottom: 2px;
+    color: var(--color);
+    padding-left: 16px;
+}
+
+#calculate {
+    background-color: var(--header-background-active);
+    padding: 10px;
+    border-radius: 12px;
+    color: var(--header-color-active);
+}
+
+#price {
+    font-weight: 600;
+}
+
+@media screen and (min-width: 769px) {
+    .calculator {
+        width: 454px;
+    }
+}
