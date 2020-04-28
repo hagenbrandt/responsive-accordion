@@ -1,11 +1,18 @@
 export function accordion() {
 
   $('.container').hide()
-  $('.container:first').show()
+
+  if (localStorage) {
+    $(`[tabindex=${localStorage.selectedTab}]`).addClass('active')
+    $(`[index=${localStorage.selectedTab}]`).show()
+  } else {
+    $('.container:first').show()
+  }
 
   $("ul.tabs li").click(function() {
     $(".container").hide();
-
+    localStorage.selectedTab = $(this).index()
+    
       const activeTab = $(this).attr("rel"); 
       $("#"+activeTab).fadeIn(500);
 
@@ -13,13 +20,14 @@ export function accordion() {
       $(this).addClass("active");
 
       $(".tab_drawer_heading").removeClass("d_active");
-
-      $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
   })
 
   $(".tab_drawer_heading").click(function() {
-      
+    
+    localStorage.selectedTab = ($(this).index() / 2)
+    
     $(".container").hide();
+    
     const d_activeTab = $(this).attr("rel"); 
     $("#"+d_activeTab).fadeIn();
 
@@ -27,8 +35,6 @@ export function accordion() {
     $(this).addClass("d_active");
 
     $("ul.tabs li").removeClass("active");
-    $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
   });
 
-  $('ul.tabs li').last().addClass("tab_last");
 }
