@@ -4,55 +4,102 @@
 
 body {
   max-width: 600px;
-  margin: 10px 0 10px;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
   height: 100vh;
+  padding: 12px;
 }
 
-#spec {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px;
+	width: 100%;
 }
 
-h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--header-background);
-  background-size: 60vw auto;
-  width: 90%;
-  height: 80px;
-
-  .focused {
-    background-color: rgb(236, 224, 253);
-    background-size: 60vw auto;
-  }
-}
-// .focused {
-// }
-a {
-  font-size: 25px;
-  color: var(--header-color);
+ul.tabs li {
+	float: left;
+  margin: 0;
+  margin-right: 2px;
+	cursor: pointer;
+	padding: 0px 21px;
+  height: 40px;
+  width: 150px;
+  line-height: 20px;
   text-align: center;
-  text-decoration: none;
+  padding-top: 10px;
+	background-color: var(--header-background);
+  color: var(--header-color);
+  border-bottom: 1px solid var(--header-border);
+  font-weight: 400;
+}
+
+ul.tabs li.active {
+	background-color: var(--header-background-active);
+	color: var(--header-color-active);
+	border-bottom: 2px solid var(--header-border-active)
 }
 
 .container {
-  align-self: flex-start;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
-  row-gap: 10px;
-  margin-left: 50px;
+  gap: 10px;
+  border: 1px solid var(--container-border);
+  border-top: none;
+  color: var(--color);
+	width: 454px;
+  padding: 24px 0 40px 16px; 
 }
 
-dt,
-dd {
-  font-size: 17px;
+.tab_drawer_heading { display: none; }
+
+@media screen and (max-width: 480px) {
+
+	.tabs {
+		display: none;
+  }
+
+	.tab_drawer_heading {
+		display: grid;
+		background-color: var(--header-background);
+		color: var(--header-color);
+    margin: 0;
+    margin-bottom: 2px;
+		cursor: pointer;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+  }
+
+  .container {
+    border: none;
+    width: auto;
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    justify-items: center;
+    align-items: center;
+    height: 50px;
+    font-size: 0.8rem;
+  }
+
+	.d_active {
+		background-color: var(--header-background-active);
+	  color: var(--header-color-active);
+	  border-bottom: 2px solid var(--header-border-active)
+  }
+  span {
+    grid-column: span 2;
+  }
 }

@@ -1,3 +1,4 @@
 .DS_Store
 .prettierrc
 docs
+node_modules
